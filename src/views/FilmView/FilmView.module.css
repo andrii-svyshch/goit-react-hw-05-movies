@@ -1,0 +1,41 @@
+.filmCard {
+  display: flex;
+}
+
+.filmDetails {
+  padding: 15px;
+}
+
+.addInfo {
+  padding: 15px;
+  min-height: 80px;
+  margin-top: 16px;
+  border-bottom: 1px solid #2a363b;
+  border-top: 1px solid #2a363b;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  margin-right: 24px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 18px;
+}
+
+.activeLink {
+  composes: link;
+  color: mediumorchid;
+}
+
+.addInfoList {
+  display: flex;
+}
+
+.cast {
+  margin-top: 15px;
+}
+
+.backButton {
+  margin-bottom: 10px;
+}
