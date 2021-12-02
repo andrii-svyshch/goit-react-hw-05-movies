@@ -12,17 +12,17 @@ const override = css`
   border-color: black;
 `;
 
-const HomeView = lazy(() =>
-  import(/* webpackChunkName: "HomeView" */ './views/HomeView'),
+const HomePage = lazy(() =>
+  import(/* webpackChunkName: "HomePage" */ './pages/HomePage'),
 );
-const FilmView = lazy(() =>
-  import(/* webpackChunkName: "FilmView" */ './views/FilmView'),
+const MovieDetailsPage = lazy(() =>
+  import(/* webpackChunkName: "MovieDetailsPage" */ './pages/MovieDetailsPage'),
 );
-const SearchView = lazy(() =>
-  import(/* webpackChunkName: "SearchView" */ './views/SearchView'),
+const MoviesPage = lazy(() =>
+  import(/* webpackChunkName: "MoviesPage" */ './pages/MoviesPage'),
 );
-const NotFoundView = lazy(() =>
-  import(/* webpackChunkName: "NotFoundView" */ './views/NotFoundView'),
+const NotFoundPage = lazy(() =>
+  import(/* webpackChunkName: "NotFoundPage" */ './pages/NotFoundPage'),
 );
 
 export default function App() {
@@ -31,12 +31,12 @@ export default function App() {
       <AppBar />
       <Suspense fallback={<PropagateLoader css={override} size={15} />}>
         <Routes>
-          <Route path="/" element={<HomeView />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="movies">
-            <Route path="" element={<SearchView />} />
-            <Route path=":filmId/*" element={<FilmView />} />
+            <Route path="" element={<MoviesPage />} />
+            <Route path=":filmId/*" element={<MovieDetailsPage />} />
           </Route>
-          <Route path="*" element={<NotFoundView />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Container>
